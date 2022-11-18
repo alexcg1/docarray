@@ -16,19 +16,19 @@
 
 DocArray is a library for nested, unstructured, multimodal data in transit, including text, image, audio, video, 3D mesh, etc. It allows deep-learning engineers to efficiently process, embed, search, recommend, store, and transfer the multi-modal data with a Pythonic API.
 
-🚪 **Door to cross-/multi-modal world**: super-expressive data structure for representing complicated/mixed/nested text, image, video, audio, 3D mesh data. The foundation data structure of [Jina](https://github.com/jina-ai/jina), [CLIP-as-service](https://github.com/jina-ai/clip-as-service), [DALL·E Flow](https://github.com/jina-ai/dalle-flow), [DiscoArt](https://github.com/jina-ai/discoart) etc.
+🚪 **Door to cross-/multi-modal world**: super-expressive data structure for representing complicated/mixed/nested text, image, video, audio, 3D mesh data. The foundation data structure of [Jina](https://github.com/jina-ai/jina), [CLIP-as-service](https://github.com/jina-ai/clip-as-service), [DALL·E Flow](https://github.com/jina-ai/dalle-flow), [DiscoArt](https://github.com/jina-ai/discoart), etc.
 
-🧑‍🔬 **Data science powerhouse**: greatly accelerate data scientists' work on embedding, k-NN matching, querying, visualizing, evaluating via Torch/TensorFlow/ONNX/PaddlePaddle on CPU/GPU.
+🧑‍🔬 **Data science powerhouse**: greatly accelerate data scientists' work on embedding, k-NN matching, querying, visualizing, evaluating with Torch/TensorFlow/ONNX/PaddlePaddle on CPU/GPU.
 
 🚡 **Data in transit**: optimized for network communication, ready-to-wire at anytime with fast and compressed serialization in Protobuf, bytes, base64, JSON, CSV, DataFrame. Perfect for streaming and out-of-memory data.
 
-🔎 **One-stop k-NN**: Unified and consistent API for mainstream vector databases that allows nearest neighboour search including Elasticsearch, Redis, ANNLite, Qdrant, Weaviate.
+🔎 **One-stop k-NN**: Unified and consistent API for mainstream vector databases that allows nearest neighbour search including Elasticsearch, Redis, AnnLite, Qdrant, Weaviate.
 
 👒 **For modern apps**: GraphQL support makes your server versatile on request and response; built-in data validation and JSON Schema (OpenAPI) help you build reliable webservices.
 
 🐍 **Pythonic experience**: designed to be as easy as a Python list. If you know how to Python, you know how to DocArray. Intuitive idioms and type annotation simplify the code you write.
 
-🛸 **Integrate with IDE**: pretty-print and visualization on Jupyter notebook & Google Colab; comprehensive auto-complete and type hint in PyCharm & VS Code.
+🛸 **Integrate with IDE**: pretty-print and visualization on Jupyter notebook & Google Colab; comprehensive auto-complete and type hints in PyCharm & VS Code.
 
 Read more on [why should you use DocArray](https://docarray.jina.ai/get-started/what-is/) and [comparison to alternatives](https://docarray.jina.ai/get-started/what-is/#comparing-to-alternatives).
 
@@ -44,11 +44,11 @@ Requires Python 3.7+
 ```shell
 pip install docarray
 ```
-or via Conda:
+or with Conda:
 ```shell
 conda install -c conda-forge docarray
 ```
-[Commonly used features](https://docarray.jina.ai/#install) can be enabled via `pip install "docarray[common]"`.
+[Commonly used features](https://docarray.jina.ai/#install) can be enabled with `pip install "docarray[common]"`.
 
 
 ## Get Started
@@ -63,7 +63,7 @@ Let's see DocArray in action with some examples.
 
 ### Example 1: represent multimodal data in dataclass
 
-The following news article card can be easily represented via `docarray.dataclass` and type annotation:
+The following news article card can be easily represented with `docarray.dataclass` and type annotation:
 
 
 <table>
@@ -104,9 +104,9 @@ d = Document(a)
 </table>
 
 
-### Example 2: a 10-liners text matching
+### Example 2: text matching in 10 lines
 
-Let's search for top-5 similar sentences of <kbd>she smiled too much</kbd> in "Pride and Prejudice". 
+Let's search for the top-5 similar sentences of <kbd>she smiled too much</kbd> in "Pride and Prejudice". 
 
 ```python
 from docarray import Document, DocumentArray
@@ -137,7 +137,7 @@ Here the feature embedding is done by simple [feature hashing](https://en.wikipe
 
 ### Example 3: external storage for out-of-memory data
 
-When your data is too big, storing in memory is probably not a good idea. DocArray supports [multiple storage backends](https://docarray.jina.ai/advanced/document-store/) such as SQLite, Weaviate, Qdrant and ANNLite. They are all unified under **the exact same user experience and API**. Take the above snippet as an example, you only need to change one line to use SQLite:
+When your data is too big, storing in memory is probably not a good idea. DocArray supports [multiple storage backends](https://docarray.jina.ai/advanced/document-store/) such as SQLite, Weaviate, Qdrant and AnnLite. They are all unified under **the exact same user experience and API**. Take the above snippet as an example: you only need to change one line to use SQLite:
 
 ```python
 da = DocumentArray(
@@ -146,15 +146,15 @@ da = DocumentArray(
 )
 ```
 
-The code snippet can still run **as-is**. All APIs remain the same, the code after are then running in a "in-database" manner. 
+The code snippet can still run **as-is**. All APIs remain the same, the subsequent code runs in a "in-database" manner. 
 
-Besides saving memory, one can leverage storage backends for persistence, faster retrieval (e.g. on nearest-neighbour queries).
+Besides saving memory, you can leverage storage backends for persistence and faster retrieval (e.g. on nearest-neighbour queries).
 
 
 
 ### Example 4: a complete workflow of visual search 
 
-Let's use DocArray and the [Totally Looks Like](https://sites.google.com/view/totally-looks-like-dataset) dataset to build a simple meme image search. The dataset contains 6,016 image-pairs stored in `/left` and `/right`. Images that share the same filename are perceptually similar. For example:
+Let's use DocArray and the [Totally Looks Like](https://sites.google.com/view/totally-looks-like-dataset) dataset to build a simple image search. The dataset contains 6,016 image-pairs stored in `/left` and `/right`. Images that share the same filename are perceptually similar. For example:
 
 <table>
 <thead>
@@ -179,7 +179,7 @@ Our problem is given an image from `/left`, can we find its most-similar image i
 
 ### Load images
 
-First we load images. You *can* go to [Totally Looks Like](https://sites.google.com/view/totally-looks-like-dataset) website, unzip and load images as below:
+First we load images. You *could* go to [Totally Looks Like](https://sites.google.com/view/totally-looks-like-dataset) website, unzip and load the images as below:
 
 ```python
 from docarray import DocumentArray
@@ -193,13 +193,11 @@ Or you can simply pull it from Jina Cloud:
 left_da = DocumentArray.pull('demo-leftda', show_progress=True)
 ```
 
-**Note**
-If you have more than 15GB of RAM and want to try using the whole dataset instead of just the first 1000 images, remove [:1000] when loading the files into the DocumentArrays left_da and right_da.
+**Note**: If you have more than 15GB of RAM and want to try using the whole dataset instead of just the first 1,000 images, remove [:1000] when loading the files into the DocumentArrays `left_da` and `right_da`.
 
+You'll see a progress bar to indicate download progress.
 
-You will see a running progress bar to indicate the downloading process.
-
-To get a feeling of the data you will handle, plot them in one sprite image. You will need to have matplotlib and torch installed to run this snippet:
+To get a feeling of the data, you can plot it in one sprite image. You'll need to have Matplotlib and Torch installed to run this snippet:
 
 ```python
 left_da.plot_image_sprites()
@@ -245,7 +243,7 @@ This step takes ~30 seconds on GPU. Beside PyTorch, you can also use TensorFlow,
 
 ### Visualize embeddings
 
-You can visualize the embeddings via tSNE in an interactive embedding projector. You will need to have  pydantic, uvicorn and fastapi installed to run this snippet:
+You can visualize the embeddings with tSNE in an interactive embedding projector. You will need to have  pydantic, Uvicorn and FastAPI installed to run this snippet:
 
 ```python
 left_da.plot_embeddings(image_sprites=True)
@@ -291,7 +289,7 @@ right_da = (
 
 ### Match nearest neighbours
 
-We can now match the left to the right and take the top-9 results.
+We can now match the left to the right and get the top 9 results.
 
 ```python
 left_da.match(right_da, limit=9)
@@ -312,13 +310,13 @@ left/02262.jpg right/04520.jpg 0.16477376
 ...
 ```
 
-Or shorten the loop as one-liner using the element & attribute selector:
+Or shorten the loop to a one-liner using the element & attribute selector:
 
 ```python
 print(left_da['@m', ('uri', 'scores__cosine__value')])
 ```
 
-Better see it.
+Let's take a look:
 
 ```python
 (
@@ -337,7 +335,7 @@ Better see it.
 <a href="https://docarray.jina.ai"><img src="https://github.com/jina-ai/docarray/blob/main/.github/README-img/9nn.png?raw=true" alt="Visualizing top-9 matches using DocArray API" height="250px"></a>
 </p>
 
-What we did here is revert the preprocessing steps (i.e. switching axis and normalizing) on the copied matches, so that you can visualize them using image sprites.  
+Here we simply reverted the preprocessing steps (i.e. switching axis and normalizing) on the copied matches, so you can visualize them using image sprites.  
 
 ### Quantitative evaluation
 
@@ -350,7 +348,7 @@ groundtruth = DocumentArray(
 )
 ```
 
-Here we create a new DocumentArray with real matches by simply replacing the filename, e.g. `left/00001.jpg` to `right/00001.jpg`. That's all we need: if the predicted match has the identical `uri` as the groundtruth match, then it is correct.
+Here we create a new DocumentArray with real matches by replacing the filename, e.g. `left/00001.jpg` to `right/00001.jpg`. That's all we need: if the predicted match has the identical `uri` as the groundtruth match, then it is correct.
 
 Now let's check recall rate from 1 to 5 over the full dataset:
 
@@ -372,14 +370,14 @@ recall@4 0.052194148936170214
 recall@5 0.0573470744680851
 ```
 
-More metrics can be used such as `precision_at_k`, `ndcg_at_k`, `hit_at_k`.
+You can use other metrics such as `precision_at_k`, `ndcg_at_k`, `hit_at_k`.
 
 If you think a pretrained ResNet50 is good enough, let me tell you with [Finetuner](https://github.com/jina-ai/finetuner) you could do much better in just 10 extra lines of code. [Here is how](https://finetuner.jina.ai/notebooks/image_to_image/).
 
 
 ### Save results
 
-You can save a DocumentArray to binary, JSON, dict, DataFrame, CSV or Protobuf message with/without compression. In its simplest form,
+You can save a DocumentArray to binary, JSON, dict, DataFrame, CSV or Protobuf message with/without compression. In its simplest form:
 
 ```python
 left_da.save('left_da.bin')
@@ -388,7 +386,7 @@ left_da.save('left_da.bin')
 To reuse it, do `left_da = DocumentArray.load('left_da.bin')`.
 
 
-If you want to transfer a DocumentArray from one machine to another or share it with your colleagues, you can do:
+To transfer a DocumentArray from one machine to another or share it with your colleagues, you can do:
 
 
 ```python
@@ -401,12 +399,12 @@ Now anyone who knows the token `my_shared_da` can pull and work on it.
 left_da = DocumentArray.pull('my_shared_da')
 ```
 
-Intrigued? That's only scratching the surface of what DocArray is capable of. [Read our docs to learn more](https://docarray.jina.ai).
+Intrigued? That's only scratching the surface of what DocArray can do. [Read our docs to learn more](https://docarray.jina.ai).
 
 
 <!-- start support-pitch -->
 ## Support
-- Join our [Slack community](https://slack.jina.ai) and chat with other community members about ideas.
+- Join our [Slack community](https://jina.ai/slack) and chat with community members about ideas.
 
 
 > DocArray is a trademark of LF AI Projects, LLC
